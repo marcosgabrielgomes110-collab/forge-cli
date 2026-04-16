@@ -1,0 +1,22 @@
+[project]
+name = "{{project_name}}"
+version = "{{version}}"
+description = "{{description}}"
+authors = [{ name = "{{author}}" }]
+dependencies = [
+    "fastapi>=0.104.0",
+    "uvicorn[standard]>=0.24.0",
+    "pydantic>=2.0.0",
+    "colorama>=0.4.6",
+    "python-dotenv>=1.0.0",
+]
+
+[project.scripts]
+{{project_name}} = "main:app"
+
+[tool.uv]
+python-version = "3.11"
+
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
