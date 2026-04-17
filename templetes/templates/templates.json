@@ -1,0 +1,89 @@
+{
+  "version": "1.0.0",
+  "templates": {
+    "cli-tool": {
+      "name": "cli-tool",
+      "title": "CLI Tool Modular",
+      "description": "Ferramenta CLI Python com descoberta automática de comandos, logging e configuração",
+      "category": "cli",
+      "tags": [
+        "cli",
+        "argparse",
+        "modular"
+      ],
+      "author": "Forge",
+      "variables": {
+        "project_name": {
+          "required": true,
+          "default": "my-cli",
+          "description": "Nome do projeto"
+        },
+        "author": {
+          "required": false,
+          "default": "$USER",
+          "description": "Nome do autor"
+        },
+        "description": {
+          "required": false,
+          "default": "",
+          "description": "Descrição do projeto"
+        },
+        "version": {
+          "required": false,
+          "default": "0.1.0",
+          "description": "Versão inicial"
+        }
+      },
+      "post_create": {
+        "instructions": [
+          "Execute: python main.py --help",
+          "Ou instale globalmente: pip install -e ."
+        ],
+        "entry_point": "main.py"
+      }
+    },
+    "rest-api": {
+      "name": "rest-api",
+      "title": "API REST FastAPI",
+      "description": "API REST com FastAPI, descoberta automática de rotas, middlewares e logging",
+      "category": "api",
+      "tags": [
+        "api",
+        "fastapi",
+        "rest",
+        "async"
+      ],
+      "author": "Forge",
+      "variables": {
+        "project_name": {
+          "required": true,
+          "default": "my-api",
+          "description": "Nome do projeto"
+        },
+        "author": {
+          "required": false,
+          "default": "$USER",
+          "description": "Nome do autor"
+        },
+        "description": {
+          "required": false,
+          "default": "",
+          "description": "Descrição do projeto"
+        },
+        "version": {
+          "required": false,
+          "default": "0.1.0",
+          "description": "Versão inicial"
+        }
+      },
+      "post_create": {
+        "instructions": [
+          "Execute: python main.py",
+          "Documentação disponível em: http://localhost:8000/docs"
+        ],
+        "entry_point": "main.py",
+        "port": 8000
+      }
+    }
+  }
+}
